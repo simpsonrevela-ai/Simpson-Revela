@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fábrica Viral IA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0f2027;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+.highlight {
+    color: #00ffcc;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 25px;
+}
+
+.btn {
+    display: none;
+    padding: 18px;
+    background: linear-gradient(45deg, #00ffcc, #00c853);
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.btn2 {
+    background: linear-gradient(45deg, #ffcc00, #ff9800);
+}
+
+.price {
+    font-size: 24px;
+    color: #00ffcc;
+}
+
+.old {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+#timer {
+    font-size: 20px;
+    color: red;
+    margin-top: 10px;
+}
+
+.notify {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1> Descubra como <span class="highlight">vender e viralizar com QUALQUER personagem usando IA</span></h1>
+<p>Todos os dias, sem aparecer e mesmo comecando do zero</p>
+
+<div id="timer">? Oferta acaba em: 59:00</div>
+
+<!-- IMAGEM -->
+<div class="card">
+<img src="imagemlucrativa.jpg" width="100%" style="border-radius:10px;">
+</div>
+
+<!-- COPY PESADA -->
+<div class="card">
+<h2>Por que voce ainda nao esta vendendo?</h2>
+<p>Porque ninguem te mostrou o metodo certo.</p>
+<p>Com IA + personagens, voce pode criar conteudo viral TODOS OS DIAS sem aparecer.</p>
+</div>
+
+<!-- BENEFÍCIOS -->
+<div class="card">
+<h2>O que voce vai aprender</h2>
+<p> Criar videos virais com personagens</p>
+<p>Usar IA pra automatizar tudo</p>
+<p>Monetizar com vendas todos os dias, Aprenda a ganhar R$ 10K/Mes usando inteligencia artificial</p>
+</div>
+
+<!-- PROVA SOCIAL -->
+<div class="card">
+<h2> Resultados reais</h2>
+<p>Fiz minha primeira venda em 48h</p>
+<p>Peguei 50k views em 3 dias</p>
+<p>Metodo simples e funciona!</p>
+</div>
+
+<!-- OFERTA -->
+<div class="card">
+
+<p class="old">De R$97,00</p>
+<p class="price">Por R$37,70</p>
+
+<a id="btn1" class="btn" href="https://pay.cakto.com.br/zmg6jb7_874773">
+QUERO O METODO COMPLETO
+</a>
+
+<hr style="margin:20px 0; opacity:0.2;">
+
+<p class="price">Metodo simples e lucrativo</p>
+<p class="price">Por R$19,90</p>
+
+<a id="btn2" class="btn btn2" href="https://pay.cakto.com.br/9qjjz5o">
+ QUERO A VERSAO SIMPLES
+</a>
+
+</div>
+
+</div>
+
+<div id="notify" class="notify"></div>
+
+<script>
+// BOTÕES APARECEM
+setTimeout(() => {
+    document.getElementById("btn1").style.display = "block";
+    document.getElementById("btn2").style.display = "block";
+}, 7000);
+
+// CONTADOR
+let time = 300;
+setInterval(() => {
+    let min = Math.floor(time / 60);
+    let sec = time % 60;
+    document.getElementById("timer").innerHTML = `Oferta acaba em: ${min}:${sec}`;
+    time--;
+}, 1000);
+
+// NOTIFICAÇÕES
+const nomes = ["Lucas", "Ana", "Carlos", "Julia", "Pedro", "Marcos"];
+
+setInterval(() => {
+    let nome = nomes[Math.floor(Math.random() * nomes.length)];
+    let box = document.getElementById("notify");
+    box.innerHTML = `${nome} acabou de comprar!`;
+    box.style.display = "block";
+
+    setTimeout(() => {
+        box.style.display = "none";
+    }, 3000);
+
+}, 6000);
+</script>
+
+</body>
+</html>
